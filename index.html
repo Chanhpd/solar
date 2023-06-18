@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://img.icons8.com/doodle/48/naruto.png" type="image/x-icon">
-  <link rel="shortcut icon" href="https://img.icons8.com/doodle/48/naruto.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://img.icons8.com/doodle/48/naruto.png" type="image/x-icon">
     <title>Solar</title>
 </head>
 <style>
@@ -40,6 +40,7 @@
         position: absolute;
         z-index: 1;
         /*     height: 100%; */
+
         top: 0;
         left: 0;
         width: 90px;
@@ -48,16 +49,17 @@
         border-bottom: 0.5px solid grey;
 
     }
-    .img-collapse{
+
+    .img-collapse {
         position: absolute;
         z-index: 2;
-        cursor: wait;
+        cursor: pointer;
         height: 20px;
         top: 0;
         left: 0;
         width: 90px;
         background: #0e0f12;
-        
+
     }
 
     .buttons-list {
@@ -109,10 +111,11 @@
 
     .label {
         color: grey;
-        padding: 15px 0 0 5px;
+        padding: 20px 0 0 5px;
         font-size: 11px;
         font-family: sans-serif;
     }
+    
 </style>
 
 <body>
@@ -121,9 +124,10 @@
     <div class="buttons-column">
 
         <div id="myList">
-            <div class="label views-label">View:</div>
-            <ul class="buttons-list" >
-                <li class="button active-button" id="main-button">Main</li>
+            
+            <div class="label views-label" >View:</div>
+            <ul class="buttons-list">
+                <li class="button active-button" id="main-button">Sun</li>
                 <li class="button" id="mercury-button">Mercury</li>
                 <li class="button" id="venus-button">Venus</li>
                 <li class="button" id="earth-button">Earth</li>
@@ -133,15 +137,17 @@
                 <li class="button" id="uranus-button">Uranus</li>
                 <li class="button" id="neptune-button">Neptune</li>
             </ul>
-    
+
             <div class="label lines-label">Visibility:</div>
             <ul class="buttons-list">
                 <li class="button hidden" id="lines-button">Orbit Lines</li>
             </ul>
         </div>
-        <img class="img-collapse" width="16" height="16" src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Bottom-basic-web-ui-elements-others-inmotus-design.png" alt="center" onclick="toggleList()"/>
+        <img class="img-collapse" width="16" height="16"
+            src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Bottom-basic-web-ui-elements-others-inmotus-design.png"
+            alt="center" onclick="toggleList()" />
     </div>
-    
+
     <script src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js'></script>
@@ -154,6 +160,7 @@
             var list = document.getElementById("myList");
             if (list.style.display === "none") {
                 list.style.display = "block";
+                list.style.transition = "height 2s";
             } else {
                 list.style.display = "none";
             }
